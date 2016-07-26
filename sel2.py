@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 
 import unittest
 
@@ -15,13 +16,18 @@ class AweberTest(unittest.TestCase):
 
     def test_search(self):
         self.driver.get("https://en.wikipedia.org/wiki/Software_testing")
-        search_window = find_element_by_id("simpleSearch")
-        search_window.send_keys("slovak")
-        search_window.click()
-        search_window.send_keys(Keys.RETURN)
+        self.driver.find_element_by_id("searchInput").send_keys('slovak')
 
 
-	def tearDown(self):
+    def test_select(self):
+         self.driver.get("https://en.wikipedia.org/wiki/Software_testing")
+         select = self.driver.find_elements_by_class_name("toctext")
+
+         for option in select:
+            if option.text == "Economics":
+                option.click()
+
+    def tearDown(self):
 		self.driver.close()
 
 if __name__ == "__main__":
