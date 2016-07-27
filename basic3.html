@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src ="jstut.js"></script>
+
+        <style type="text/css">
+            body {font-size: 1.6em;}
+            .hidden {display:none;}
+            .show{display: inline!important;}
+
+            button{
+                border: 2px solid black; background: #E5E4E2;
+                font-size: .5em; font-weight: bold; color: black;
+                padding: .8em 2em;
+                margin-top: .4em;
+            }
+        </style>
+
+    </head>
+
+    <body>
+    <script>
+
+        function openAlert(mess) {
+            alert(mess);
+        }
+
+    </script>
+
+    <a href="JavaScript:void(0)" onClick="alert('hello')">Say hello</a><br />
+
+    <a href="JavaScript:void(0)" onClick="openAlert('how are you')">Say something</a><br />
+
+    <a href="JavaScript:void(0)"
+       onmouseover="this.style.color = 'red';"
+    onmouseout="this.style.color = 'blue'"
+       ondblclick="this.text= 'double clicked me'"
+       onmousedown="this.text='dont press too hard'"
+       onmouseup="this.text='thx'">Make me Red</a><br />
+    </a><br />
+
+
+
+
+    </body>
+</html>
+///https://www.youtube.com/watch?v=fju9ii8YsGs ///48min

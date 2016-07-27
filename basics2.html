@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src ="jstut.js"></script>
+
+        <style type="text/css">
+            body {font-size: 1.6em;}
+            .hidden {display:none;}
+            .show{display: inline!important;}
+
+            button{
+                border: 2px solid black; background: #E5E4E2;
+                font-size: .5em; font-weight: bold; color: black;
+                padding: .8em 2em;
+                margin-top: .4em;
+            }
+        </style>
+
+    </head>
+    <body>
+
+    <p id="sayHello"></p>
+        <h1>
+
+        <script>
+
+            var yourName = prompt("What is your name?");
+
+            if(yourName != null){
+                document.getElementById("sayHello").innerHTML = "Hello " + yourName;
+            } else {
+                alert("Please enter the name next time");
+            }
+
+            document.write("5 plus 4 = ", 5+4, "<br />");
+            }
+
+        </script>
+
+        <script>
+
+            var i = 1;
+
+            while( i<=5){
+                document.write(i + "<br />");
+                i++;
+        </script>
+
+        <script>
+
+            function inArray(arrayToCheck, value) {
+
+                for(i = 0; i< arrayToCheck.length; i++){
+                    if(arrayToCheck[i] === value){
+                        return True;
+                    }
+                }
+                return false;
+
+            }
+
+            var randArray = [1,2,34,5,6];
+
+            document.write("In array : ", inArray(randArray, 6), "<br />");
+
+        </script>
+        </h1>
+
+
+    </body>
+
+
+</html>
