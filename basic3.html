@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src ="jstut.js"></script>
+        <head>
+            <script src ="jstut.js"></script>
 
-        <style type="text/css">
-            body {font-size: 1.6em;}
-            .hidden {display:none;}
-            .show{display: inline!important;}
+            <style type="text/css">
+                body {font-size: 1.6em;}
+                .hidden {display:none;}
+                .show{display: inline!important;}
+                button{
+                    border: 2px solid black; background: #E5E4E2;
+                    font-size: .5em; font-weight: bold; color: black;
+                    padding: .8em 2em;
+                    margin-top: .4em;
+                }
+            </style>
 
-            button{
-                border: 2px solid black; background: #E5E4E2;
-                font-size: .5em; font-weight: bold; color: black;
-                padding: .8em 2em;
-                margin-top: .4em;
-            }
-        </style>
+        </head>
 
-    </head>
-
-    <body>
-    <script>
-
-        function openAlert(mess) {
-            alert(mess);
-        }
-
-    </script>
+     <body>
 
     <a href="JavaScript:void(0)" onClick="alert('hello')">Say hello</a><br />
 
@@ -39,9 +32,79 @@
        onmouseup="this.text='thx'">Make me Red</a><br />
     </a><br />
 
+    <input type="text" id="randInput" onChange="var dataEntered=document.getElementById('randInput').value; alert('User typed ' + dataEntered)">
+
+    <form action ='#' id="sampForm">
+        <input id='charInput' type="text">
+
+        <p id="keyData">Key Data here.</p>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form><br />
+
+    <img src="https://lh5.ggpht.com/8PODwBXKk4L201m4IO1wifRDfbn4Q1JxNxOzj-5TXPJ85_S-vOqntLi7TsVyeFQM0w4=w300" id="logo">
+
+    <button id="logoButton">Get Logo</button>
+
+    <button id ='clearInputs'>Clear</button>
+
+    <input id="mouseInput" type="text" size="30"><br />
+
+    MouseX: <input type="text" id="mouseX"><br />
+    MouseY: <input type="text" id="mouseY"><br />
+
+        <script>
+
+            function getChar(event) {
+                if(event.which == null){
+                    return String.fromCharCode(event.keyCode);
+                }else if(event.which != null && event.charCode != 0){
+                    return String.fromCharCode(event.which);
+                }else{
+                    return null;
+                }
+            }
+
+            document.getElementById('charInput').onkeypress =
+                    function (event) {
+                        var char = getChar(event || window.event)
+                        if (!char) return false;
+
+                        document.getElementById('keyData').innerHTML = char + " was clicked";
+                        return true;
+                    }
+            document.getElementById('charInput').onselect = function(event){
+                document.getElementById('keyData').innerHTML = 'selected';}
+
+            document.getElementById('logoButton').onclick = function(event){
+                document.getElementById('logo').className = 'show';
+                }
+
+            document.getElementById('logo').onmouseover = function(event){
+                document.getElementById('logo').src = 'https://lh5.ggpht.com/8PODwBXKk4L201m4IO1wifRDfbn4Q1JxNxOzj-5TXPJ85_S-vOqntLi7TsVyeFQM0w4=w300' = 'selected';
+                document.getElementById('mouseInput').value = 'Mouse over image'
+            }
+
+            document.getElementById('clearInputs').onclick = function(event) {
+                var clearE = document.getElementsByTagName("input");
+
+                for(i=0; i<clearE.length; i++){
+                    if(clearE[i].type='text'){
+                        clearE[i].value = "";
+                    }
+                }
+            }
+
+
+
+        </script>
+
+
+
+
 
 
 
     </body>
 </html>
-///https://www.youtube.com/watch?v=fju9ii8YsGs ///48min
