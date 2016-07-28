@@ -20,85 +20,38 @@
 
      <body>
 
-    <a href="JavaScript:void(0)" onClick="alert('hello')">Say hello</a><br />
+    <script>
 
-    <a href="JavaScript:void(0)" onClick="openAlert('how are you')">Say something</a><br />
+        var cust1 = {
+            name: "John",
+            street: "Mlynska",
+            age: 20,
+            balance: 100.50,
 
-    <a href="JavaScript:void(0)"
-       onmouseover="this.style.color = 'red';"
-    onmouseout="this.style.color = 'blue'"
-       ondblclick="this.text= 'double clicked me'"
-       onmousedown="this.text='dont press too hard'"
-       onmouseup="this.text='thx'">Make me Red</a><br />
-    </a><br />
-
-    <input type="text" id="randInput" onChange="var dataEntered=document.getElementById('randInput').value; alert('User typed ' + dataEntered)">
-
-    <form action ='#' id="sampForm">
-        <input id='charInput' type="text">
-
-        <p id="keyData">Key Data here.</p>
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
-
-    </form><br />
-
-    <img src="https://lh5.ggpht.com/8PODwBXKk4L201m4IO1wifRDfbn4Q1JxNxOzj-5TXPJ85_S-vOqntLi7TsVyeFQM0w4=w300" id="logo">
-
-    <button id="logoButton">Get Logo</button>
-
-    <button id ='clearInputs'>Clear</button>
-
-    <input id="mouseInput" type="text" size="30"><br />
-
-    MouseX: <input type="text" id="mouseX"><br />
-    MouseY: <input type="text" id="mouseY"><br />
-
-        <script>
-
-            function getChar(event) {
-                if(event.which == null){
-                    return String.fromCharCode(event.keyCode);
-                }else if(event.which != null && event.charCode != 0){
-                    return String.fromCharCode(event.which);
-                }else{
-                    return null;
-                }
+            payDownBal: function (amtPaid) {
+                this.balance -= amtPaid;
+            },
+            addToBal: function (amtCharged) {
+                this.balance += amtCharged;
             }
+        };
 
-            document.getElementById('charInput').onkeypress =
-                    function (event) {
-                        var char = getChar(event || window.event)
-                        if (!char) return false;
+        document.write("Customer name: ", cust1.name, "<br />");
 
-                        document.getElementById('keyData').innerHTML = char + " was clicked";
-                        return true;
-                    }
-            document.getElementById('charInput').onselect = function(event){
-                document.getElementById('keyData').innerHTML = 'selected';}
-
-            document.getElementById('logoButton').onclick = function(event){
-                document.getElementById('logo').className = 'show';
-                }
-
-            document.getElementById('logo').onmouseover = function(event){
-                document.getElementById('logo').src = 'https://lh5.ggpht.com/8PODwBXKk4L201m4IO1wifRDfbn4Q1JxNxOzj-5TXPJ85_S-vOqntLi7TsVyeFQM0w4=w300' = 'selected';
-                document.getElementById('mouseInput').value = 'Mouse over image'
+        for(var prop in cust1){
+            if(cust1.hasOwnProperty(prop)){
+                document.write(prop, "<br />");
             }
+        }
 
-            document.getElementById('clearInputs').onclick = function(event) {
-                var clearE = document.getElementsByTagName("input");
-
-                for(i=0; i<clearE.length; i++){
-                    if(clearE[i].type='text'){
-                        clearE[i].value = "";
-                    }
-                }
-            }
+        document.write("name in cust1 : ", "name" in cust1, "<br />");
 
 
 
-        </script>
+    </script>
+
+
+
 
 
 
