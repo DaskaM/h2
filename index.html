@@ -1,44 +1,23 @@
 <!DOCTYPE html>
+<html>
+<head>
 
-<html lang="en">
-    <head>
-        <title>Javascript</title>
-        <link rel="stylesheet" href ="styles/main.css">
-    </head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-    <body>
+    <script src="app.js"></script>
 
-        <div id="header">
-            <h1>My site</h1>
-        </div>
-        <div id="content">
-            <h2>Hey, hello</h2>
-        </div>
-        <script>
-            console.log("hi there");
-            var myVariable = 5;
+</head>
 
-            var w1 = "hello";
-            var w2 = "world";
-            var sentence = w1 + " " + w2;
-            document.write(sentence);
-            document.write(" ");
-            var short = sentence.substring(2,6);
+<body ng-app="MyApp">
+    <div ng-controller="AppCtrl">
 
-            var a = new Array(7);
-            a[0] = 'cat';
-            a[1] = 'dog';
-            a[3] = 'dug';
-            a[4] = 95;
+    <h1>My promises</h1>
+        Result: {{result}}
+        Result: {{ 5+9 }}
 
-            for (i=0; i<4; i++) {
+    </div>
 
-                document.write( "iteration" + i +"<br>");
-            }
 
-        </script>
-        <div id="footer">borovicka a rum</div>
-    </body>
 
-    </head>
+</body>
 </html>
