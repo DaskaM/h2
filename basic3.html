@@ -4,51 +4,43 @@
         <head>
             <script src ="jstut.js"></script>
 
-            <style type="text/css">
-                body {font-size: 1.6em;}
-                .hidden {display:none;}
-                .show{display: inline!important;}
-                button{
-                    border: 2px solid black; background: #E5E4E2;
-                    font-size: .5em; font-weight: bold; color: black;
-                    padding: .8em 2em;
-                    margin-top: .4em;
-                }
-            </style>
-
         </head>
 
      <body>
 
-    <script>
+    <div>
+        Enter your name:
 
-        var cust1 = {
-            name: "John",
-            street: "Mlynska",
-            age: 20,
-            balance: 100.50,
+    <input id="name" name="name" type="text" size = "30" onblur="isTheFieldEmpty(this, document.getElementById('name_help'))"/>
+        <span id="name_help"></span>
+    </div>
 
-            payDownBal: function (amtPaid) {
-                this.balance -= amtPaid;
-            },
-            addToBal: function (amtCharged) {
-                this.balance += amtCharged;
+<script>
+
+    function editNodeText(regex, input, helID, helpMessage) {
+        if(!regex.test(input)){
+            if(helpId) != null)
+
+            while(helpId.childNodes[0]){
+                helpId.removeChild(helpId.childNodes[0]);
             }
-        };
+            helpId.appendChild(document.createTextNode(helpMessage));
 
-        document.write("Customer name: ", cust1.name, "<br />");
-
-        for(var prop in cust1){
-            if(cust1.hasOwnProperty(prop)){
-                document.write(prop, "<br />");
+        }else {
+            if(helpId != null){
+                while(helpId.childNodes[0]){
+                    helpId.removeChild(helpId.childNodes[0])
+                }
             }
         }
+    }
 
-        document.write("name in cust1 : ", "name" in cust1, "<br />");
+    function isTheFieldEmpty(inputField, helpId) {
+        return editNodeText("dsa", inputField.value, helpId, "again");
 
+    }
 
-
-    </script>
+</script>
 
 
 
