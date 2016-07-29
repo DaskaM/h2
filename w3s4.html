@@ -2,20 +2,33 @@
 <html lang="en">
 <head>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css">
 
 </head>
 <body>
 <div ng-app="myApp" ng-controller="myCtrl">
 
-    <select ng-model="selectedName" ng-options="x for x in names">
+
+
+    <p class="nadpis">Select a name</p>
+
+    <select ng-model="selectedName" ng-options="x.f_name for x in names" class="press">
     </select>
+
+    <h1 class="press">You selected: {{selectedName.f_name}}</h1>
+    <p class="press">Her surname is {{selectedName.l_name}}</p>
 
 </div>
 
 <script>
     var app = angular.module("myApp", []);
     app.controller("myCtrl", function ($scope) {
-        $scope.names = ["Sisa", "Nutel", "Lauri", "Siska"];
+        $scope.names = [
+            {f_name: "Sisa", l_name: "Janigova"},
+            {f_name: "Nutel", l_name: "Valaskova"},
+            {f_name: "Lauri", l_name: "Slobodova"},
+            {f_name: "Siska", l_name: "Janigova"}
+            ];
 
     });
 
