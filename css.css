@@ -1,0 +1,21 @@
+body{
+    background-color: lavender;
+    background-clip: content-box;
+}
+.nadpis{
+    font-size: 4em;
+    font-style: italic;
+    text-decoration: double;
+    text-decoration-color: crimson;
+
+}
+.press{
+    text-align: center;
+    font-weight: bolder;
+    position: relative;
+    color: darkslateblue;
+}
+.nigga{
+    align-content: flex-start;
+    box-shadow: blueviolet;
+}

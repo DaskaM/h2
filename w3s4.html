@@ -1,38 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css.css">
+<!-- saved from url=(0070)http://localhost:63342/angjs/w3s4.html?_ijt=35mci1nc2rajskmijpugklmebh -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <script src="./w3s4_files/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./w3s4_files/css.css">
 
 </head>
 <body>
-<div ng-app="myApp" ng-controller="myCtrl">
+<div ng-app="myApp" ng-controller="myCtrl" class="ng-scope">
 
 
 
     <p class="nadpis">Select a name</p>
 
-    <select ng-model="selectedName" ng-options="x.f_name for x in names" class="press">
-    </select>
+    <select ng-model="selectedName" ng-options="x.f_name for x in names" class="press ng-valid ng-dirty ng-valid-parse ng-touched"><option label="Sisa" value="object:3">Sisa</option><option label="Nutel" value="object:4">Nutel</option><option label="Lauri" value="object:5">Lauri</option><option label="Siska" value="object:6">Siska</option></select>
+    <p>
 
-    <h1 class="press">You selected: {{selectedName.f_name}}</h1>
-    <p class="press">Her surname is {{selectedName.l_name}}</p>
+        <button ng-click="mySwitch=true">Do you want to fuck me? Click.</button>
+
+
+        </p><div class="press">
+            <h1 class="press ng-binding">You selected: Lauri</h1>
+            <p class="press ng-binding">Her surname is Slobodova</p>
+        </div>
+        <div class="press">
+            <form class="ng-valid ng-dirty ng-valid-parse">
+                Enter Text: <input type="text" ng-model="yourText" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+            </form>
+        </div>
+
+        <div class="nigga">
+            <p ng-show="mySwitch" class="">
+                <img src="./w3s4_files/avatar.jpg" alt="nigga">
+            </p>
+        </div>
+    <p></p>
 
 </div>
+
 
 <script>
     var app = angular.module("myApp", []);
     app.controller("myCtrl", function ($scope) {
+
+        $scope.mySwitch = false;
+
         $scope.names = [
             {f_name: "Sisa", l_name: "Janigova"},
             {f_name: "Nutel", l_name: "Valaskova"},
             {f_name: "Lauri", l_name: "Slobodova"},
             {f_name: "Siska", l_name: "Janigova"}
             ];
+        $scope.yourText = ""
 
     });
 
 </script>
 
-</body>
-</html>
+
+</body></html>
